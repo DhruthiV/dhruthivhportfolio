@@ -14,10 +14,11 @@ export function Bio({ loading, blocks }: BioProps) {
   if (loading) return <BioSkeleton />;
 
   return (
-    <section className="flex flex-col items-center text-center justify-center gap-8 my-3 py-12 lg:min-h-[calc(10dvh)]">
-      <div className="flex flex-col">
+    <section className="my-3 flex flex-col items-center justify-center gap-6 py-8 text-center sm:gap-8 sm:py-12">
+      <div className="w-full min-w-0">
         <NotionRenderer blocks={blocks} />
       </div>
+
       <div className="flex items-center justify-center gap-3">
         <a
           href={SITE_CONFIG.socials.behance}
@@ -45,30 +46,26 @@ export function Bio({ loading, blocks }: BioProps) {
 
 function BioSkeleton() {
   return (
-    <section className="flex flex-col items-center justify-center gap-8 my-3 py-12 text-center min-h-[420px] sm:min-h-[440px] lg:min-h-[460px]">
+    <section className="my-3 flex min-h-[320px] flex-col items-center justify-center gap-6 px-1 py-8 text-center sm:min-h-[400px] sm:gap-8 sm:py-12 lg:min-h-[420px]">
       <article className="w-full space-y-2">
-        {/* Availability heading */}
         <div className="flex justify-center pt-3">
-          <Skeleton className="h-6 w-64 max-w-full" />
+          <Skeleton className="h-5 w-52 max-w-full sm:h-6 sm:w-64" />
         </div>
 
-        {/* Main heading: reserve room for longer wording */}
         <div className="flex flex-col items-center gap-2 pt-4">
-          <Skeleton className="h-12 w-full max-w-4xl" />
-          <Skeleton className="h-12 w-11/12 max-w-4xl" />
-          <Skeleton className="h-12 w-4/5 max-w-3xl" />
+          <Skeleton className="h-8 w-full max-w-4xl sm:h-12" />
+          <Skeleton className="h-8 w-11/12 max-w-4xl sm:h-12" />
+          <Skeleton className="h-8 w-4/5 max-w-3xl sm:h-12" />
         </div>
       </article>
 
-      {/* Supporting content */}
-      <div className="flex justify-center">
-        <Skeleton className="h-5 w-3/4 max-w-xl" />
+      <div className="flex w-full justify-center">
+        <Skeleton className="h-4 w-3/4 max-w-xl sm:h-5" />
       </div>
 
-      {/* Social links */}
       <div className="flex items-center justify-center gap-3">
-        <Skeleton className="h-10 w-10 rounded-full" />
-        <Skeleton className="h-10 w-10 rounded-full" />
+        <Skeleton className="size-9 rounded-full sm:size-10" />
+        <Skeleton className="size-9 rounded-full sm:size-10" />
       </div>
     </section>
   );
