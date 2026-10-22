@@ -4,11 +4,11 @@ import { Navbar } from "@/modules/Navbar";
 
 export function PortfolioLayout() {
   return (
-    <div id="dashboard-scroll" className="h-full overflow-y-auto">
+    <div id="dashboard-scroll" className="h-full">
       <div className="flex min-h-full flex-col">
         <Navbar />
 
-        <main className="mx-auto flex w-full max-w-6xl flex-1 flex-col gap-12 px-4 pt-4 sm:gap-16 md:px-8 lg:gap-28">
+        <main className="mt-16 mx-auto flex w-full max-w-6xl flex-1 flex-col gap-10 px-4 pt-4 sm:gap-14 md:px-8 overflow-y-auto">
           <Outlet />
         </main>
 

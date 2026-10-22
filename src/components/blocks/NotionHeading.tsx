@@ -12,22 +12,22 @@ export function NotionHeading({ block }: NotionHeadingProps) {
 
   if (type === "heading_1") {
     return (
-      <h2 className="pt-4 text-5xl tracking-tight text-foreground">
+      <h1 className="pt-4 text-3xl tracking-tight text-foreground">
         <NotionRichText richText={richText} />
-      </h2>
+      </h1>
     );
   }
 
   if (type === "heading_2") {
     return (
-      <h3 className="pt-3 text-3xl font-semibold tracking-tight text-foreground">
+      <h2 className="pt-3 text-2xl font-semibold tracking-tight text-foreground">
         <NotionRichText richText={richText} />
-      </h3>
+      </h2>
     );
   }
   if (type === "heading_3") {
     return (
-      <h3 className="pt-3 text-2xl font-semibold tracking-tight text-foreground">
+      <h3 className="pt-3 text-xl font-semibold tracking-tight text-foreground">
         <NotionRichText richText={richText} />
       </h3>
     );

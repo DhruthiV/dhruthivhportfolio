@@ -8,8 +8,8 @@ export function Navbar() {
   const resumeMailto = buildMailtoLink(RESUME_REQUEST_MAILTO);
 
   return (
-    <header className="sticky top-2 z-50 mx-auto mt-2 w-[calc(100%-1rem)] md:w-[85%]">
-      <nav className="flex min-h-12 items-center justify-between gap-2 rounded-full bg-background px-3 py-3 shadow-sm backdrop-blur-md sm:px-5 md:px-6">
+    <header className="sticky top-0 pt-10 px-10 justify-items-center z-50 bg-white w-full">
+      <nav className="flex min-h-12 items-center justify-between gap-2 rounded-full bg-background shadow-sm backdrop-blur-md sm:px-4 md:px-6 w-[calc(100%)] md:w-[85%] px-4">
         <Link
           to="/"
           className="shrink-0 text-sm font-sans tracking-tight text-foreground sm:text-base"
@@ -19,7 +19,7 @@ export function Navbar() {
 
         <div className="flex min-w-0 items-center justify-end gap-1">
           <Link to="/projects" className={linkClass}>
-            Projects
+            Concepts
           </Link>
 
           <a
