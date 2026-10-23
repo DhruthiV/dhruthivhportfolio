@@ -10,7 +10,7 @@ export function NotionList({ block }: NotionListProps) {
   const richText = block[type]?.rich_text ?? [];
 
   return (
-    <li className="text-base leading-7 text-muted-foreground">
+    <li className="text-base leading-7 text-foreground">
       <NotionRichText richText={richText} />
     </li>
   );

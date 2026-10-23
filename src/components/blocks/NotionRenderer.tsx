@@ -52,5 +52,5 @@ export function NotionRenderer({ blocks }: NotionRendererProps) {
     index++;
   }
 
-  return <article className="space-y-2">{elements}</article>;
+  return <article className="space-y-6">{elements}</article>;
 }

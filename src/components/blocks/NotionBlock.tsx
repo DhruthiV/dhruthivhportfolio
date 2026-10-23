@@ -9,6 +9,7 @@ import { NotionImage } from "./NotionImage";
 import { NotionList } from "./NotionList";
 import { NotionQuote } from "./NotionQuote";
 import { NotionVideo } from "./NotionVideo";
+import { NotionEmbed } from "./NotionEmbed";
 
 interface NotionBlockProps {
   block: any;
@@ -51,12 +52,21 @@ export function NotionBlock({ block }: NotionBlockProps) {
     case "divider":
       return <NotionDivider />;
 
-    case "column_list":
+    case "column_list": {
+      const children = block.children ?? [];
+      const columnCount = children.length;
+
       return (
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-          {renderChildren(block.children ?? [])}
+        <div
+          className="grid grid-cols-1 gap-6"
+          style={{
+            gridTemplateColumns: `repeat(${columnCount}, minmax(0, 1fr))`,
+          }}
+        >
+          {renderChildren(children)}
         </div>
       );
+    }
 
     case "column":
       return (
@@ -64,6 +74,9 @@ export function NotionBlock({ block }: NotionBlockProps) {
           {renderChildren(block.children ?? [])}
         </div>
       );
+
+    case "embed":
+      return <NotionEmbed block={block} />;
 
     default:
       console.log("Unsupported Notion block type:", block.type);

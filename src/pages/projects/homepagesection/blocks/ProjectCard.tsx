@@ -37,20 +37,6 @@ export function ProjectCard({ project }: ProjectCardProps) {
         "transition-colors hover:border-accent/60",
       )}
     >
-      {/* Image */}
-      {project.pic ? (
-        <div className="relative shrink-0 overflow-hidden">
-          <img
-            src={project.pic}
-            alt={`${project.name} project preview`}
-            className="aspect-[4/3] w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
-          />
-        </div>
-      ) : (
-        <div className="flex aspect-[16/9] shrink-0 items-center justify-center bg-muted text-sm text-muted-foreground">
-          No preview available
-        </div>
-      )}
       <Link
         to={
           project.caseStudyId
@@ -60,9 +46,24 @@ export function ProjectCard({ project }: ProjectCardProps) {
         state={{ title: project.name }}
         className="block h-full"
       >
+        {/* Image */}
+        {project.pic ? (
+          <div className="relative shrink-0 overflow-hidden">
+            <img
+              src={project.pic}
+              alt={`${project.name} project preview`}
+              className="aspect-[4/3] w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+            />
+          </div>
+        ) : (
+          <div className="flex aspect-[16/9] shrink-0 items-center justify-center bg-muted text-sm text-muted-foreground">
+            No preview available
+          </div>
+        )}
+
         {/* Content */}
         <CardHeader className="flex-1">
-          <CardTitle className="text-xl font-semibold transition-colors group-hover:text-primary">
+          <CardTitle className="text-xl font-semibold transition-colors group-hover:text-primary mt-4 py-2">
             {project.name}
           </CardTitle>
 
