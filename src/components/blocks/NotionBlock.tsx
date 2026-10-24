@@ -58,10 +58,12 @@ export function NotionBlock({ block }: NotionBlockProps) {
 
       return (
         <div
-          className="grid grid-cols-1 gap-6"
-          style={{
-            gridTemplateColumns: `repeat(${columnCount}, minmax(0, 1fr))`,
-          }}
+          className="grid grid-cols-1 gap-6 md:grid-cols-[repeat(var(--column-count),minmax(0,1fr))]"
+          style={
+            {
+              "--column-count": columnCount,
+            } as React.CSSProperties
+          }
         >
           {renderChildren(children)}
         </div>
